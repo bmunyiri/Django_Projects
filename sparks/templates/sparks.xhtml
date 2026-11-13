@@ -1,0 +1,17 @@
+{% extends 'learning_logs/base.xhtml' %}
+
+{% block content %}
+    <h1>Daily Sparks</h1>
+    <ul>
+        {% for spark in sparks %}
+            <li>
+                <p>"{{ spark.text }}"</p>
+                {% if spark.author %}
+                    <p>- {{ spark.author }}</p>
+                {% endif %}
+            </li>
+        {% empty %}
+            <li>No sparks have been added yet.</li>
+        {% endfor %}
+    </ul>
+{% endblock content %}
